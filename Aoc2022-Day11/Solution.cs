@@ -1,4 +1,4 @@
-1namespace Aoc2022_Day11;
+namespace Aoc2022_Day11;
 
 internal class Solution
 {
