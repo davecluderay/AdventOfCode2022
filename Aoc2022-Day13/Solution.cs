@@ -4,7 +4,7 @@ internal class Solution
 {
     public string Title => "Day 13: Distress Signal";
 
-    public object? PartOne()
+    public object PartOne()
     {
         var result = ReadInSections()
                      .Select((p, i) => (Index: i + 1,
@@ -14,7 +14,7 @@ internal class Solution
         return result;
     }
 
-    public object? PartTwo()
+    public object PartTwo()
     {
         var dividers = new[] { Value.Read("[[2]]"), Value.Read("[[6]]") };
         var result = ReadInSections()
@@ -28,7 +28,7 @@ internal class Solution
         return result;
     }
 
-    private IEnumerable<Value[]> ReadInSections(string? fileName = null)
+    private static IEnumerable<Value[]> ReadInSections(string? fileName = null)
         => InputFile.ReadInSections(fileName)
                     .Select(s => s.Select(Value.Read)
                                   .ToArray());
