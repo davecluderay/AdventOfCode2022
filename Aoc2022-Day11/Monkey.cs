@@ -73,11 +73,11 @@ internal static partial class MonkeyInput
 {
     [GeneratedRegex(
         """
-        Monkey (?<Id>\d+):
-          Starting items: ((, )?(?<Item>\d+))+
-          Operation: new = old (?<InspectOperator>[+*]) (?<InspectOperand>\d+|old)
-          Test: divisible by (?<TestDivisor>\d+)
-            If true: throw to monkey (?<NextMonkeyIfTestTrue>\d+)
+        Monkey (?<Id>\d+):\r?
+          Starting items: ((, )?(?<Item>\d+))+\r?
+          Operation: new = old (?<InspectOperator>[+*]) (?<InspectOperand>\d+|old)\r?
+          Test: divisible by (?<TestDivisor>\d+)\r?
+            If true: throw to monkey (?<NextMonkeyIfTestTrue>\d+)\r?
             If false: throw to monkey (?<NextMonkeyIfTestFalse>\d+)
         """,
         RegexOptions.ExplicitCapture | RegexOptions.Compiled

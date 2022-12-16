@@ -22,7 +22,7 @@ internal class Solution
 
     private static IReadOnlyDictionary<int, Monkey> ReadMonkeys(string? fileName = null)
         => InputFile.ReadInSections(fileName)
-                    .Select(s => string.Join('\n', s))
+                    .Select(s => string.Join("\r\n", s))
                     .Select(Monkey.Read)
                     .ToDictionary(m => m.Id)
                     .AsReadOnly();
