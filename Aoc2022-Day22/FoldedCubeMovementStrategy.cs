@@ -26,8 +26,8 @@ internal class FoldedCubeMovementStrategy : IMovementStrategy
                 var vertexFaces = resolvedVertex.Corners.Select(x => x.Face).ToArray();
                 var adjacentCorners = resolvedVertex.Corners.SelectMany(c => c.Face.GetAdjacentCorners((c.Row, c.Column)))
                                                     .ToHashSet();
-                var adjacentVertices = vertices.Where(v => v.Corners.Any(vx => adjacentCorners.Contains((vx.Row, vx.Column))));
-                var merge = adjacentVertices.Where(v => vertexFaces.Count(i => v.Corners.Any(z => z.Face == i)) == 1)
+                var adjacentVertices = vertices.Where(v => v.Corners.Any(c => adjacentCorners.Contains((c.Row, c.Column))));
+                var merge = adjacentVertices.Where(a => vertexFaces.Count(f => a.Corners.Any(c => c.Face == f)) == 1)
                                             .ToArray();
                 if (merge.Length != 2)
                     continue;
