@@ -18,7 +18,8 @@ internal static class Snafu
                           '1' => 1,
                           '0' => 0,
                           '-' => -1,
-                          '=' => -2
+                          '=' => -2,
+                          _ => throw new ArgumentOutOfRangeException(nameof(snafu), $"Not a SNAFU: {snafu}")
                       };
             result += (long)Math.Pow(5, pow) * val;
         }
